@@ -1,3 +1,6 @@
+"use strict"
+//will use newer version
+
 const accId = 12323423;
 var name = "Vivek";
 let first = "second";
