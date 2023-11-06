@@ -58,4 +58,5 @@ users.greetings1 = function(){
 
 console.log(users.greetings())
 ;
-console.log(users.greetings1())
+console.log(users.greetings1());
+
