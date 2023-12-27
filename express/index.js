@@ -9,6 +9,49 @@ let user = [{
 
 app.use(express.json());
 
+function middleWare(req,res,next)
+{
+    const userName = req.body.userName;
+  
+    const pass = req.body.pass;
+    
+  
+    if(userName=='Vivek' && pass=='1234')
+    {
+       
+        next();
+    }
+    else
+    {
+        res.status(404).json({msg:'user not found'});
+    }
+}
+function oneMoreMiddleware(req,res,next)
+{
+    let some = req.body.some;
+
+    if(some=='1')
+    {
+        
+        next();
+    }
+    else
+    {
+        res.status(404).json({msg:'not found'});
+    }
+}
+count = 0;
+function countReq(req,res,next)
+{
+    count++;
+    console.log(`total number of reqeusts are ${count}`)
+    next();
+}
+app.post('/',middleWare,oneMoreMiddleware,countReq,(req,res)=>{
+
+    res.json("everything is ok");
+    
+})
 app.get('/',(req,res)=>{
     
     const name = user[0].userName;
@@ -67,5 +110,20 @@ app.delete('/',(req,res)=>{
     console.log(newKidney);
     user[0].kidney = newKidney;
     res.json({msg:"removed all unhealthy kidnies"})
+})
+
+app.post('/health-checkup', (req,res)=>{
+
+    const kidney = req.body.kidney;
+    let totalKidney = kidney.length;
+    
+    res.send(`you have total ${totalKidney} kidnies`);
+
+})
+
+//Error handling middleware || global catch (always at the end)
+app.use((err,req,res,next)=>
+{
+    res.status(500).json({msg:"something is up with our server"});
 })
 app.listen(3000,()=>console.log("listening at 3000...."));
