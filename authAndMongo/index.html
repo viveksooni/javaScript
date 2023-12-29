@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking on click function</title>
+</head>
+<body>
+    <script>
+        async function getAnimalData()
+        {
+
+            // -----with out using async await-----
+        //    fetch("https://fakerapi.it/api/v1/persons")
+        //    .then((res)=>{
+                
+        //         res.json()
+        //         .then((data)=>console.log(data))
+        //    })
+
+            response = await fetch("https://fakerapi.it/api/v1/persons");
+            data = await response.json();
+            console.log(data.data);
+        }
+    
+    </script>
+    
+    <button onclick="getAnimalData()">on click get animal</button>
+</body>
+</html>

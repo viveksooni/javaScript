@@ -30,3 +30,11 @@ app.get('/', (req,res)=>{
 })
 
 app.listen(3000,()=>{console.log("server is running at 8080")});
+
+// const schema = zod.string().regex(new RegExp(".+@.+\.com"));
+
+// str = "vivek@dev.com";
+
+// let response = schema.safeParse(str);
+
+// console.log(response);
