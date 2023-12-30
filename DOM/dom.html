@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    
+    <form id= "loginForm" action="">
+        <label for="firstName">first name</label>
+        <input type="text" value = "vivek" >
+        <label for="lname">last name</label>
+        <input type="text" value = "soni" >
+    </form>
+
+    <button onclick="solve()">try it</button>
+    <p id="data"></p>
+    <script>
+        function solve()
+        {
+           let x = document.getElementById("loginForm");
+           console.log(x);
+           console.log(x.elements);
+           let y = document.getElementById("loginForm").elements[0].value;
+           
+            document.getElementById("data").innerHTML = 
+            " name of the man is "+y;
+
+            para = document.createElement("p");
+            para.innerText = "haanji, good morning";
+
+            document.body.appendChild(para);
+
+        }
+
+    </script>
+</body>
+</html>

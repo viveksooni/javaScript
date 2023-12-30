@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM, enter an element</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <script>
+        let heading = document.createElement('h1');
+        heading.id = 'title-'+Math.round(Math.random()*100+1);
+        heading.class= 'heading';
+        heading.innerText = 'Vivek Soni is the best ';//this will first create the reference to the text node then it will override the content
+
+        const h1 = document.createTextNode("vivek soni is good");
+        //create text node will directly create a textnode and then we will apend it
+        heading.appendChild(h1);//this way is more optimized
+        
+
+        heading.title = 'helo';
+        console.log(heading);
+        document.body.appendChild(heading);
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" class="heading">DOM Learning <span hidden>hidden</span> with chai or code </h1>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+
+    <ul>
+        <li class ="list-items">hi hello</li>
+        <li class ="list-items">bye chalo </li>
+        <li class ="list-items">kon ho tum</li>
+        <li class ="list-items">mai theek hu</li>
+    </ul>
+
+    <ul class="parent">
+        <li class="day">Monday</li>
+        <li class="day">Tuesday</li>
+        <li class="day">Thursday</li>
+        <li class="day">wednesday</li>
+    </ul>
+
+    <script>
+        let parent = document.querySelector('.parent');
+        console.log(parent);
+        console.log(parent.children);
+
+        for (let i = 0; i < parent.children.length; i++) {
+            
+            console.log(parent.children[i].innerHTML);
+            
+        }
+        parent.children[0].style.color = 'orange';
+        parent.children[2].style.color = 'green';
+
+        parent.firstElementChild.style.backgroundColor = 'White';
+        parent.lastElementChild.style.color = 'pink';
+
+        const dayOne = document.querySelector('.day');
+
+        console.log(dayOne.innerHTML);
+        // to get paretn of the element 
+        console.log(dayOne.parentElement);
+        //to get the sibling of the dayone 
+        console.log(dayOne.nextElementSibling.innerText);
+
+        console.log(parent.childNodes) 
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM, Editing the dom</title>
+    <style>
+        body
+        {
+            background-color: #212121;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul class="languages">
+        <li>javascript</li>
+    </ul>
+
+    <script>
+        function addLang(langName)
+        {
+            list = document.createElement('li');
+        
+            list.appendChild(document.createTextNode(langName));
+
+            document.querySelector('.languages').appendChild(list);
+            
+        }
+        addLang('python');
+        addLang('go');
+        addLang('typscript');
+
+        //editing (change second language)
+        //replacing
+        list = document.createElement('li');
+        let newText = document.createTextNode("mojo");
+        list.appendChild(newText)
+        document.querySelector('li:nth-child(2)').replaceWith(list);
+
+        //remove
+        //delete the last one
+        document.querySelector('li:last-child').remove();
+        
+    </script>
+</body>
+</html>

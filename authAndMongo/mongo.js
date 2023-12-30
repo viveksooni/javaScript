@@ -6,7 +6,7 @@ const User = mongoose.model('Users',{name: String, email: String, password: Stri
 
 
 const user = new User({
-    name : "shahshi Soni",
+    name : "Vivek Soni",
     email : "sonivivek@gmail.com",
     password : "12345"
 })
