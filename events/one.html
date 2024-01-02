@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in js</title>
+    <style>
+        body
+        {
+            background-color: #414141;
+            color: #ffff;
+        }
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li id="vivek">vivek</li>
+        <li id="soni">soni</li>
+        <li id="shreya">shreya</li>
+    </ul>
+    
+    <script>
+
+        document.getElementById('shreya').addEventListener('click',(e)=>{
+            alert("clicked on shreya");
+        },false);
+
+    </script>
+</body>
+</html>
